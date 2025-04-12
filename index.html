@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Your Daily Wellness Guide</title>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <!--Hamburger-->
+      <div
+        class="hamburger"
+        id="hamburger"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul
+        class="nav-links"
+        id="nav-links"
+      >
+        <li><a href="about.html">About</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="wellness.html">Meditation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Daily Wellness for your state of mind</h1>
+        <p>Personalized wellness support for your unique needs</p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="intro-text">
+        <h2>Welcome to your daily wellness space</h2>
+        <p>
+          Whether you're feeling calm, scattered, energized or tired — this space is here to meet you where you are.
+          Think of it as your personal wellness check-in — simple, intuitive and made
+          just for how you're feeling today.
+        </p>
+        <p>By answering a few quick questions, we’ll guide you to something that fits your energy for the day:
+          a grounding yoga pose, a calming meditation, a nourishing recipe — even a song to reset your mind</p>
+      </div>
+    </section>
+
+
+    <!-- Image feature section -->
+    <section class="features">
+      <div class="feature-card quiz-card">
+        <h3>Your Personalized Tip</h3>
+        <form
+          id="form"
+          class="form"
+        >
+          <fieldset>
+            <legend>What best describes your current state?</legend>
+            <label><input
+                type="radio"
+                name="state"
+                value="calm"
+                required
+              > Calm</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="joyfull"
+                required
+              > Joyfull</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="stressed"
+                required
+              > Stressed</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="tired"
+                required
+              > Tired</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="anxious"
+                required
+              > Anxious</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="focused"
+                required
+              > Focused</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="scattered"
+                required
+              > Scattered</label>
+            <label><input
+                type="radio"
+                name="state"
+                value="sad"
+                required
+              > Sad</label>
+          </fieldset>
+          <button
+            type="submit"
+            class="submit-btn"
+          >Get My Tip</button>
+        </form>
+      </div>
+
+      <div class="feature-card">
+        <img
+          src=""
+          alt="Woman practicing yoga"
+        >
+        <h3>Personalized Yoga</h3>
+      </div>
+
+      <div class="feature-card">
+        <img
+          src=""
+          alt="Healthy meal with vegetables"
+        >
+        <h3>Nourishing Recipes</h3>
+      </div>
+
+      <div class="feature-card">
+        <img
+          src=""
+          alt="Woman meditating"
+        >
+        <h3>Mindfulness Practices</h3>
+      </div>
+    </section>
+
+  </main>
+
+  <!--Footer-->
+  <footer>
+    <a
+      href="about.html"
+      aria-label="About InnerGlow"
+    >About</a> |
+    <a
+      href="contact.html"
+      aria-label="Contact Us"
+    >Contact</a>
+    <p class="copyright">&copy; 2025 DailyHealth. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
