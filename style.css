@@ -181,7 +181,7 @@ main {
 
 .quiz-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 
 }
@@ -198,6 +198,9 @@ main {
   padding: 0 0.5rem;
 }
 
+.intro-text {
+  align-self: center;
+}
 
 
 /*Feature cards*/
@@ -319,8 +322,14 @@ footer a:hover {
   }
 
   .quiz-card {
-    grid-column: span 3;
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+  }
+
+  .intro-text {
+    align-self: center;
   }
 
   .feature-card:hover {
@@ -379,17 +388,23 @@ footer a:hover {
     background-color: var(--secondary);
   }
 
+  .quiz-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+  }
+
+  .intro-text {
+    align-self: center;
+  }
+
   .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .quiz-card {
-    grid-column: span 3;
-    margin-bottom: 2rem;
   }
 
   .feature-card:hover {
