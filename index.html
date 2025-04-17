@@ -15,8 +15,18 @@
 </head>
 
 <body>
+
+  <a
+    href="#main-content"
+    class="skip-link"
+  >Skip to main content</a>
+
   <header>
-    <nav class="navbar">
+    <nav
+      class="navbar"
+      role="navigation"
+      aria-label="main menu"
+    >
       <!--Hamburger-->
       <div
         class="hamburger"
@@ -37,35 +47,27 @@
         <li><a href="wellness.html">Meditation</a></li>
       </ul>
     </nav>
-  </header>
 
-  <main>
     <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Daily Wellness for your state of mind</h1>
-        <p>Personalized wellness support for your unique needs</p>
+        <h1>Daily Health - Your daily wellness guide</h1>
+        <p>Daily wellness for your state of mind</p>
       </div>
     </section>
+  </header>
 
-    <section class="intro">
-      <div class="intro-text">
-        <h2>Welcome to your daily wellness space</h2>
-        <p>
-          Whether you're feeling calm, scattered, energized or tired — this space is here to meet you where you are.
-          Think of it as your personal wellness check-in — simple, intuitive and made
-          just for how you're feeling today.
-        </p>
-        <p>By answering a few quick questions, we’ll guide you to something that fits your energy for the day:
-          a grounding yoga pose, a calming meditation, a nourishing recipe — even a song to reset your mind</p>
-      </div>
-    </section>
-
-
-    <!-- Image feature section -->
-    <section class="features">
-      <div class="feature-card quiz-card">
-        <h3>Your Personalized Tip</h3>
+  <main
+    id="main-content"
+    tabindex="-1"
+  >
+    <!-- Combined intro and form -->
+    <section
+      class="quiz-card"
+      aria-label="quiz-section"
+    >
+      <h2 class="quiz-card-h2">Your daily check-in</h2>
+      <div class="quiz">
         <form
           id="form"
           class="form"
@@ -105,58 +107,68 @@
             <label><input
                 type="radio"
                 name="state"
-                value="focused"
-                required
-              > Focused</label>
-            <label><input
-                type="radio"
-                name="state"
                 value="scattered"
                 required
               > Scattered</label>
-            <label><input
-                type="radio"
-                name="state"
-                value="sad"
-                required
-              > Sad</label>
           </fieldset>
           <button
             type="submit"
             class="submit-btn"
-          >Get My Tip</button>
+          >Get My Inspiration</button>
         </form>
       </div>
 
+      <div
+        class="intro-text"
+        aria-label="introduction-text"
+      >
+        <p>
+          Whether you're feeling calm, scattered, energized or tired — this space is here to meet you where you are.
+          Think of it as your personal wellness check-in — simple, intuitive and made
+          just for how you're feeling today.
+        </p>
+        <p>By answering a few quick questions, we’ll guide you to something that fits your energy for the day:
+          a grounding yoga pose, a calming meditation, a nourishing recipe — even a song to reset your mind</p>
+      </div>
+    </section>
+
+    <section
+      class="features"
+      aria-label="features"
+    >
       <div class="feature-card">
         <img
-          src=""
+          src="assets/yoga.png"
           alt="Woman practicing yoga"
         >
-        <h3>Personalized Yoga</h3>
+        <h3>Yoga Pose</h3>
       </div>
 
       <div class="feature-card">
         <img
-          src=""
-          alt="Healthy meal with vegetables"
+          src="assets/food.png"
+          alt="Overnight oats with fruits, breakfast"
         >
         <h3>Nourishing Recipes</h3>
       </div>
 
       <div class="feature-card">
         <img
-          src=""
+          src="assets/calm.png"
           alt="Woman meditating"
         >
-        <h3>Mindfulness Practices</h3>
+        <h3>Meditation Practice</h3>
       </div>
     </section>
 
+    <section
+      class="result-container"
+      id="wellness-result"
+    ></section>
   </main>
 
   <!--Footer-->
-  <footer>
+  <footer role="footer-information">
     <a
       href="about.html"
       aria-label="About InnerGlow"

@@ -67,13 +67,27 @@ main {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 8px;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* Navigation styling*/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--white);
-  border-bottom: 1px solid var(--secondary);
   position: relative;
   z-index: 101;
 }
@@ -83,6 +97,8 @@ main {
   cursor: pointer;
   position: relative;
   z-index: 102;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .hamburger span {
@@ -153,6 +169,8 @@ main {
   margin-bottom: 3rem;
   padding: 2rem 1rem;
   text-align: center;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--secondary);
 }
 
 .hero h1 {
@@ -160,21 +178,27 @@ main {
 }
 
 /*Intro section*/
-.intro {
-  padding: 3rem 1.5rem;
-  background-color: var(--secondary);
+
+.quiz-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 
 }
 
-.intro-text {
-  max-width: 700px;
-  margin: 0 auto;
+.quiz-card h2 {
+  grid-column: 1 / -1;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-.intro-text h2 {
-  margin-bottom: 1.25rem;
+.quiz,
+.intro-text {
+  flex: 1;
+  padding: 0 0.5rem;
 }
+
+
 
 /*Feature cards*/
 .form {
@@ -204,9 +228,7 @@ label {
   cursor: pointer;
 }
 
-label:hover {
-  background-color: var(--secondary);
-}
+
 
 input[type="radio"] {
   margin-right: 0.5rem;
@@ -216,7 +238,7 @@ input[type="radio"] {
   display: block;
   width: 100%;
   padding: 0.75rem;
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
   color: var(--white);
   border: none;
   border-radius: 8px;
@@ -225,7 +247,8 @@ input[type="radio"] {
 }
 
 .submit-btn:hover {
-  background-color: var(--primary-dark);
+  text-decoration: underline;
+  border: 2px solid var(--text);
 }
 
 
@@ -236,8 +259,8 @@ input[type="radio"] {
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
-}
 
+}
 
 .feature-card {
   margin-bottom: 2rem;
@@ -286,6 +309,7 @@ footer a:hover {
 /*Media Queries*/
 
 @media (min-width: 668px) and (max-width: 1023px) {
+
   .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -322,6 +346,10 @@ footer a:hover {
     display: none;
   }
 
+  .navbar {
+    justify-content: flex-end;
+  }
+
   .nav-links {
     position: static;
     flex-direction: row;
@@ -336,8 +364,19 @@ footer a:hover {
     margin: 0;
   }
 
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+
   .navbar {
     padding: 1.5rem 4rem;
+  }
+
+  label:hover,
+  label:focus {
+    background-color: var(--secondary);
   }
 
   .features {
@@ -359,7 +398,7 @@ footer a:hover {
   }
 
   .feature-card img {
-    max-height: 200px;
+    max-height: 300px;
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 1rem;
