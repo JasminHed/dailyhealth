@@ -16,11 +16,6 @@
 
 <body>
 
-  <a
-    href="#main-content"
-    class="skip-link"
-  >Skip to main content</a>
-
   <header>
     <nav
       class="navbar"
@@ -42,7 +37,6 @@
         id="nav-links"
       >
         <li><a href="about.html">About</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
         <li><a href="yoga.html">Yoga</a></li>
         <li><a href="wellness.html">Meditation</a></li>
       </ul>
@@ -63,12 +57,12 @@
   >
     <!-- Combined intro and form -->
     <section
+      id="quiz-card"
       class="quiz-card"
       aria-label="quiz-section"
     >
       <h2 class="quiz-card-h2">Your daily check-in</h2>
       <div class="quiz">
-
         <form
           id="form"
           class="form"
@@ -117,6 +111,7 @@
             class="submit-btn"
           >Get My Inspiration</button>
         </form>
+
       </div>
 
 
@@ -135,38 +130,28 @@
     </section>
 
     <section
-      class="features"
-      aria-label="features"
+      class="feature-section"
+      aria-label="feature-section"
     >
-      <div class="feature-card">
-        <img
-          src="assets/yoga.png"
-          alt="Woman practicing yoga"
-        >
-        <h3>Yoga Pose</h3>
-      </div>
+      <div class="features">
+        <div class="feature-card">
+          <img
+            src="assets/yoga.png"
+            alt="Woman practicing yoga"
+          >
+          <h3>Yoga Pose</h3>
+        </div>
 
-      <div class="feature-card">
-        <img
-          src="assets/food.png"
-          alt="Overnight oats with fruits, breakfast"
-        >
-        <h3>Nourishing Recipes</h3>
-      </div>
-
-      <div class="feature-card">
-        <img
-          src="assets/calm.png"
-          alt="Woman meditating"
-        >
-        <h3>Meditation Practice</h3>
+        <div class="feature-card">
+          <img
+            src="assets/calm.png"
+            alt="Woman meditating"
+          >
+          <h3>Meditation Practice</h3>
+        </div>
       </div>
     </section>
 
-    <section
-      class="result-container"
-      id="wellness-result"
-    ></section>
   </main>
 
   <!--Footer-->
@@ -181,6 +166,7 @@
     >Contact</a>
     <p class="copyright">&copy; 2025 DailyHealth. All rights reserved.</p>
   </footer>
+
 
   <script src="script.js"></script>
 </body>

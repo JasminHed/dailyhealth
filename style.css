@@ -22,6 +22,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   border-radius: 0;
+
 }
 
 h1 {
@@ -61,26 +62,11 @@ p {
 }
 
 main {
-  width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
   overflow-x: hidden;
+  padding: 1rem;
 }
 
-.skip-link {
-  position: fixed;
-  top: -40px;
-  left: 0;
-  background: black;
-  color: white;
-  padding: 8px;
-  z-index: 9999;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 0;
-}
 
 /* Navigation styling*/
 .navbar {
@@ -177,8 +163,7 @@ main {
   margin-bottom: 1rem;
 }
 
-/*Intro section*/
-
+/*Intro + Quiz section*/
 .quiz-card {
   display: grid;
   grid-template-columns: 1fr;
@@ -200,10 +185,14 @@ main {
 
 .intro-text {
   align-self: center;
+  order: 1;
+}
+
+.quiz {
+  order: 2;
 }
 
 
-/*Feature cards*/
 .form {
   width: 100%;
 }
@@ -255,18 +244,29 @@ input[type="radio"] {
 }
 
 
+/*Feature cards*/
+
+.feature-section {
+  background-color: var(--secondary);
+  margin-top: 3rem;
+  width: 100vw;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem 1rem;
-  max-width: 1200px;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem 1rem;
+  max-width: 100%;
   margin: 0 auto;
 
 }
 
 .feature-card {
   margin-bottom: 2rem;
+  margin-top: 2rem;
   background-color: var(--white);
   padding: 1rem;
   border-radius: 8px;
@@ -311,25 +311,29 @@ footer a:hover {
 
 /*Media Queries*/
 
-@media (min-width: 668px) and (max-width: 1023px) {
-
-  .features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+@media (min-width: 480px) and (max-width: 668px) {
 
   .quiz-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
 
+  .quiz {
+    order: 2;
   }
 
   .intro-text {
+    order: 1;
     align-self: center;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .feature-card:hover {
@@ -350,7 +354,7 @@ footer a:hover {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1600px) {
   .hamburger {
     display: none;
   }
@@ -392,16 +396,22 @@ footer a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
 
+  .quiz {
+    order: 2;
   }
 
   .intro-text {
+    order: 1;
     align-self: center;
   }
 
+
+
   .features {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;

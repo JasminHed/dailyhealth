@@ -12,17 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const form = document.getElementById("form")
-  const resultsContainer = document.getElementById(wellness - results)
+  const quizCard = document.getElementById("quiz-card")
+  const resultContainer = document.getElementById("wellness-result")
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const selectedState = document.querySelector('input[name="state"]:checked').value;
+    const selectedState = document.querySelector('input[name="state"]:checked').value
 
-    resultsContainer.innerHTML = "";
+    quizCard.innerHTML = ""
 
-    if (selectedState === 'tired') {
-      resultsContainer.innerHTML = `
+    if (selectedState === "tired") {
+      resultContainer.innerHTML = `
         <div class="meditation-card">
           <h2>Meditation for Tiredness</h2>
           <img src="assets/tired-meditation.jpg" alt="Restorative meditation">
@@ -34,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </audio>
           </div>
         </div>
-      `;
-    } else if (selectedState === 'stressed') {
-      resultsContainer.innerHTML = `
+      `
+    } else if (selectedState === "stressed") {
+      quizCard.innerHTML = `
         <div class="meditation-card">
           <h2>Meditation for Stress</h2>
           <img src="assets/stressed-meditation.jpg" alt="Stress relief meditation">
@@ -48,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </audio>
           </div>
         </div>
-      `;
-    } else if (selectedState === 'scattered') {
-      resultsContainer.innerHTML = `
+      `
+    } else if (selectedState === "scattered") {
+      quizCard.innerHTML = `
         <div class="meditation-card">
           <h2>Meditation for Feeling Scattered</h2>
           <img src="assets/scattered-meditation.jpg" alt="Focus meditation">
@@ -62,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </audio>
           </div>
         </div>
-      `;
+      `
     }
-  });
+  })
 
 
 
