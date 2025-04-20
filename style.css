@@ -15,8 +15,8 @@
 }
 
 body {
-  --font-serif: 'Georgia', serif;
-  --font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+
+  --font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   background-color: var(--white);
   color: var(--text);
   line-height: 1.6;
