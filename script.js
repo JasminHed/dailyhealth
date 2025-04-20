@@ -1,3 +1,6 @@
+// Similar structure to the Technigo recipe project
+// using a local data store (mock), then selecting the correct content based on user input
+
 document.addEventListener("DOMContentLoaded", () => {
 
   //Get ID
@@ -10,65 +13,206 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.classList.toggle("active")
   })
 
-
   const form = document.getElementById("form")
   const quizCard = document.getElementById("quiz-card")
-  const resultContainer = document.getElementById("wellness-result")
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const selectedState = document.querySelector('input[name="state"]:checked').value
-
-    quizCard.innerHTML = ""
-
-    if (selectedState === "tired") {
-      resultContainer.innerHTML = `
-        <div class="meditation-card">
-          <h2>Meditation for Tiredness</h2>
-          <img src="assets/tired-meditation.jpg" alt="Restorative meditation">
-          <p>This gentle meditation will help restore your energy and reduce fatigue. Find a comfortable position and allow yourself 10 minutes to recharge.</p>
-          <div class="audio-player">
-            <audio controls>
-              <source src="assets/tired.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      `
-    } else if (selectedState === "stressed") {
-      quizCard.innerHTML = `
-        <div class="meditation-card">
-          <h2>Meditation for Stress</h2>
-          <img src="assets/stressed-meditation.jpg" alt="Stress relief meditation">
-          <p>This calming meditation will help reduce your stress levels and bring you back to center. Focus on your breath and let tension melt away.</p>
-          <div class="audio-player">
-            <audio controls>
-              <source src="assets/stressed.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      `
-    } else if (selectedState === "scattered") {
-      quizCard.innerHTML = `
-        <div class="meditation-card">
-          <h2>Meditation for Feeling Scattered</h2>
-          <img src="assets/scattered-meditation.jpg" alt="Focus meditation">
-          <p>This meditation will help you gather your thoughts and find focus. Ground yourself and return to the present moment.</p>
-          <div class="audio-player">
-            <audio controls>
-              <source src="assets/scattered.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        </div>
-      `
+  const meditationData = {
+    tired: {
+      video: "assets/imgtired.mp4",
+      audio: "assets/tired.mp3",
+      title: "Meditation for Feeling Tired",
+      text: "This gentle meditation will help restore your energy and reduce fatigue. Find a comfortable position and allow yourself to recharge."
+    },
+    scattered: {
+      video: "assets/imgscattered.mp4",
+      audio: "assets/scattered.mp3",
+      title: "Meditation for Feeling Scattered",
+      text: "This meditation will help you gather your thoughts and find focus. Ground yourself and return to the present moment."
+    },
+    stressed: {
+      video: "assets/imgstress.mp4",
+      audio: "assets/stress.mp3",
+      title: "Meditation for Stress",
+      text: "This calming meditation will help reduce your stress levels and bring you back to center. Focus on your breath and let tension melt away."
     }
+  }
+
+  //Checking for: state is selected, form is submitted show correct meditation 
+  form.addEventListener("submit", (e) => {
+    e.preventDefault() //Stop from reloading page
+    const selectedState = document.querySelector('input[name="state"]:checked').value
+    showMeditation(selectedState)
   })
 
+  const showMeditation = (state) => {
+    const content = meditationData[state];
+    if (!content) return
 
 
+    quizCard.innerHTML = `
+  <div class="quiz-result">
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="${content.video}" type="video/mp4">
+      </video>
+      <div class="overlay-audio">
+        <audio controls>
+          <source src="${content.audio}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+    <div class="text-content">
+      <h2>${content.title}</h2>
+      <p>${content.text}</p>
+      <button id="next-to-affirmation" class="submit-btn">Next: next-to-yoga</button>
+    </div>
+  </div>
+`
 
+    //Hide all on page, show rest on fullscreen
+    document.body.classList.add("fullscreen-mode")
+
+
+    //Next button to get to other content
+    setTimeout(() => {
+      const nextButton = document.getElementById("next-to-yoga")
+      if (nextButton) {
+        nextButton.addEventListener("click", () => showYoga(state))
+      }
+
+    }, 100) //show after 100millisec
+
+  }
+
+  const showYoga = (state) => {
+    const yogaVideos = {
+      tired: {
+        video: "assets/yogatired.jpg",
+        audio: "assets/yoga-tired-voice.mp3",
+        title: "Yogapose for Tiredness",
+        text: "This pose will gently energize your body and mind."
+      },
+      scattered: {
+        video: "assets/yogascattered.jpg",
+        audio: "assets/yoga-scattered-voice.mp3",
+        title: "Yogapose for Grounding",
+        text: "A grounding pose to bring your attention back into your body."
+      },
+      stressed: {
+        video: "assets/yogastressed.jpg",
+        audio: "assets/yoga-stressed-voice.mp3",
+        title: "Yogapose for Stress Relief",
+        text: "A pose that helps you let go of tension."
+      }
+    }
+    const content = yogaVideos[state]
+    if (!content) return
+    quizCard.innerHTML = `
+      <div class="quiz-result">
+        <div class="video-background">
+          <video autoplay muted loop playsinline>
+            <source src="${content.video}" type="video/mp4">
+          </video>
+          <div class="overlay-audio">
+            <audio controls autoplay>
+              <source src="${content.audio}" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+        <div class="text-content">
+          <h2>${content.title}</h2>
+          <p>${content.text}</p>
+          <button id="next-to-affirmation" class="submit-btn">Next: Affirmation</button>
+        </div>
+      </div>
+    `
+
+    //Next button to get to other content
+    setTimeout(() => {
+      const nextButton = document.getElementById("next-to-affirmation")
+      if (nextButton) {
+        nextButton.addEventListener("click", () => showAffirmation(state))
+      }
+    }, 100) //show after 100millisec
+
+  }
+
+
+  const showAffirmation = (state) => {
+    const affirmations = {
+      tired: {
+        text: "I give myself permission to rest and renew.",
+        image: "assets/affirmation1.jpg",
+        audio: "assets/affirmation-tired.mp3"
+      },
+      scattered: {
+        text: "I am here, right now, fully.",
+        image: "assets/affirmation1.jpg",
+        audio: "assets/affirmation-scattered.mp3"
+      },
+      stressed: {
+        text: "I am calm, I am clear.",
+        image: "assets/affirmation1.jpg",
+        audio: "assets/affirmation-stressed.mp3"
+      }
+    }
+    const content = affirmations[state]
+    if (!content) return
+
+    quizCard.innerHTML = `
+    <div class="quiz-result">
+      <div class="video-background">
+        <img src="${content.image}" alt="Affirmation background" style="width:100%; height:100%; object-fit:cover;">
+        <div class="overlay-audio">
+          <audio controls autoplay>
+            <source src="${content.audio}" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+      <div class="text-content">
+        <h2>Your Daily Affirmation</h2>
+        <p>"${content.text}"</p>
+        <button id="restart" class="submit-btn">Back to Start</button>
+      </div>
+    </div>
+  `
+
+    //Next button to get to other content
+    setTimeout(() => {
+      const nextButton = document.getElementById("restart")
+      if (nextButton) {
+        nextButton.addEventListener("click", () => window.location.reload()) //start app from beginning
+      }
+    }, 100)
+  }
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
