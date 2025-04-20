@@ -15,160 +15,144 @@
 </head>
 
 <body>
-
-  <header>
-    <nav
-      class="navbar"
-      role="navigation"
-      aria-label="main menu"
-    >
-      <!--Hamburger-->
-      <div
-        class="hamburger"
-        id="hamburger"
+  <div class="app-shell">
+    <header>
+      <nav
+        class="navbar"
+        role="navigation"
+        aria-label="main menu"
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul
-        class="nav-links"
-        id="nav-links"
-      >
-        <li><a href="about.html">About</a></li>
-        <li><a href="yoga.html">Yoga</a></li>
-        <li><a href="wellness.html">Meditation</a></li>
-      </ul>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Daily Health - Your daily wellness guide</h1>
-        <p>Daily wellness for your state of mind</p>
-      </div>
-    </section>
-  </header>
-
-  <main
-    id="main-content"
-    tabindex="-1"
-  >
-    <!-- Combined intro and form -->
-    <section
-      id="quiz-card"
-      class="quiz-card"
-      aria-label="quiz-section"
-    >
-      <h2 class="quiz-card-h2">Your daily check-in</h2>
-      <div class="quiz">
-        <form
-          id="form"
-          class="form"
+        <!--Hamburger-->
+        <div
+          class="hamburger"
+          id="hamburger"
         >
-          <fieldset>
-            <legend>What best describes your current state?</legend>
-            <label><input
-                type="radio"
-                name="state"
-                value="calm"
-                required
-              > Calm</label>
-            <label><input
-                type="radio"
-                name="state"
-                value="joyfull"
-                required
-              > Joyfull</label>
-            <label><input
-                type="radio"
-                name="state"
-                value="stressed"
-                required
-              > Stressed</label>
-            <label><input
-                type="radio"
-                name="state"
-                value="tired"
-                required
-              > Tired</label>
-            <label><input
-                type="radio"
-                name="state"
-                value="anxious"
-                required
-              > Anxious</label>
-            <label><input
-                type="radio"
-                name="state"
-                value="scattered"
-                required
-              > Scattered</label>
-          </fieldset>
-          <button
-            type="submit"
-            class="submit-btn"
-          >Get My Inspiration</button>
-        </form>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-      </div>
+        <ul
+          class="nav-links"
+          id="nav-links"
+        >
+          <li><a href="about.html">About</a></li>
+          <li><a href="yoga.html">Yoga</a></li>
+          <li><a href="wellness.html">Meditation</a></li>
+        </ul>
+      </nav>
 
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Daily Health - Your daily wellness guide</h1>
+          <p>Daily wellness for your state of mind</p>
+        </div>
+      </section>
+    </header>
 
-      <div
-        class="intro-text"
-        aria-label="introduction-text"
-      >
-        <p>
-          Whether you're feeling calm, scattered, energized or tired — this space is here to meet you where you are.
-          Think of it as your personal wellness check-in — simple, intuitive and made
-          just for how you're feeling today.
-        </p>
-        <p>By answering a few quick questions, we’ll guide you to something that fits your energy for the day:
-          a grounding yoga pose, a calming meditation, a nourishing recipe — even a song to reset your mind</p>
-      </div>
-    </section>
-
-    <section
-      class="feature-section"
-      aria-label="feature-section"
+    <main
+      id="main-content"
+      tabindex="-1"
     >
-      <div class="features">
-        <div class="feature-card">
-          <img
-            src=""
-            alt="Woman practicing yoga"
+      <!-- Combined intro and form -->
+      <section
+        id="quiz-card"
+        class="quiz-card"
+        aria-label="quiz-section"
+      >
+        <h2 class="quiz-card-h2">Your daily check-in</h2>
+        <div class="quiz">
+          <form
+            id="form"
+            class="form"
           >
-          <h3>Yoga Pose</h3>
+            <fieldset>
+              <legend>What best describes your current state?</legend>
+              <label><input
+                  type="radio"
+                  name="state"
+                  value="stressed"
+                  required
+                > Stressed</label>
+              <label><input
+                  type="radio"
+                  name="state"
+                  value="tired"
+                  required
+                > Tired</label>
+              <label><input
+                  type="radio"
+                  name="state"
+                  value="scattered"
+                  required
+                > Scattered</label>
+            </fieldset>
+            <button
+              type="submit"
+              class="submit-btn"
+            >Get My Inspiration</button>
+          </form>
+
         </div>
 
-        <div class="feature-card">
-          <img
-            src=""
-            alt="Woman meditating"
-          >
-          <h3>Meditation Practice</h3>
+
+        <div
+          class="intro-text"
+          aria-label="introduction-text"
+        >
+          <p>
+            Whether you're feeling calm, scattered, energized or tired — this space is here to meet you where you are.
+            Think of it as your personal wellness check-in — simple, intuitive and made
+            just for how you're feeling today.
+          </p>
+          <p>By answering a few quick questions, we’ll guide you to something that fits your energy for the day:
+            a grounding yoga pose, a calming meditation, a nourishing recipe — even a song to reset your mind</p>
         </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!--Footer-->
-  <footer role="content-information">
-    <a
-      href="about.html"
-      aria-label="About InnerGlow"
-    >About</a> |
-    <a
-      href="contact.html"
-      aria-label="Contact Us"
-    >Contact</a>
-    <p class="copyright">&copy; 2025 DailyHealth. All rights reserved.</p>
-  </footer>
+      </section>
 
 
-  <script src="script.js"></script>
+      <section
+        class="feature-section"
+        aria-label="feature-section"
+      >
+        <div class="features">
+          <div class="feature-card">
+            <img
+              src="assets/featureyoga.jpg"
+              alt="Woman practicing yoga"
+            >
+            <h3>The Yoga Pose</h3>
+          </div>
+
+          <div class="feature-card">
+            <img
+              src="assets/featuremeditation.jpg"
+              alt="Woman meditating"
+            >
+            <h3>The Meditation</h3>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer role="content-information">
+      <a
+        href="about.html"
+        aria-label="About InnerGlow"
+      >About</a> |
+      <a
+        href="contact.html"
+        aria-label="Contact Us"
+      >Contact</a>
+      <p class="copyright">&copy; 2025 DailyHealth. All rights reserved.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+  </div>
 </body>
 
 </html>

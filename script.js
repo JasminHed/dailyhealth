@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="text-content">
       <h2>${content.title}</h2>
       <p>${content.text}</p>
-      <button id="next-to-affirmation" class="submit-btn">Next: next-to-yoga</button>
+      <button id="next-to-yoga" class="submit-btn">Next: next-to-yoga</button>
     </div>
   </div>
 `
@@ -106,17 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "A pose that helps you let go of tension."
       }
     }
+
     const content = yogaVideos[state]
     if (!content) return
+
     quizCard.innerHTML = `
       <div class="quiz-result">
-        <div class="video-background">
-          <video autoplay muted loop playsinline>
-            <source src="${content.video}" type="video/mp4">
-          </video>
+        <div class="image-background">
+          <img src="${content.video}" alt="${content.title}" class="yoga-image" />
           <div class="overlay-audio">
             <audio controls autoplay>
               <source src="${content.audio}" type="audio/mpeg">
+              Your browser does not support the audio element.
             </audio>
           </div>
         </div>
@@ -128,64 +129,59 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `
 
-    //Next button to get to other content
+    // Add event listener for next button
     setTimeout(() => {
       const nextButton = document.getElementById("next-to-affirmation")
       if (nextButton) {
         nextButton.addEventListener("click", () => showAffirmation(state))
       }
-    }, 100) //show after 100millisec
-
+    }, 100)
   }
+
 
 
   const showAffirmation = (state) => {
     const affirmations = {
       tired: {
         text: "I give myself permission to rest and renew.",
-        image: "assets/affirmation1.jpg",
         audio: "assets/affirmation-tired.mp3"
       },
       scattered: {
         text: "I am here, right now, fully.",
-        image: "assets/affirmation1.jpg",
         audio: "assets/affirmation-scattered.mp3"
       },
       stressed: {
         text: "I am calm, I am clear.",
-        image: "assets/affirmation1.jpg",
         audio: "assets/affirmation-stressed.mp3"
       }
     }
+
     const content = affirmations[state]
     if (!content) return
 
     quizCard.innerHTML = `
-    <div class="quiz-result">
-      <div class="video-background">
-        <img src="${content.image}" alt="Affirmation background" style="width:100%; height:100%; object-fit:cover;">
-        <div class="overlay-audio">
-          <audio controls autoplay>
-            <source src="${content.audio}" type="audio/mpeg">
-          </audio>
+      <div class="quiz-result white-bg-card">
+        <div class="text-content">
+          <h2>Your Daily Affirmation</h2>
+          <p class="affirmation-text">"${content.text}"</p>
+          <div class="overlay-audio">
+            <audio controls autoplay>
+              <source src="${content.audio}" type="audio/mpeg" />
+            </audio>
+          </div>
+          <button id="restart" class="submit-btn">Back to Start</button>
         </div>
       </div>
-      <div class="text-content">
-        <h2>Your Daily Affirmation</h2>
-        <p>"${content.text}"</p>
-        <button id="restart" class="submit-btn">Back to Start</button>
-      </div>
-    </div>
-  `
+    `
 
-    //Next button to get to other content
     setTimeout(() => {
-      const nextButton = document.getElementById("restart")
-      if (nextButton) {
-        nextButton.addEventListener("click", () => window.location.reload()) //start app from beginning
+      const restartButton = document.getElementById("restart")
+      if (restartButton) {
+        restartButton.addEventListener("click", () => window.location.reload())
       }
     }, 100)
   }
+
 
 })
 
