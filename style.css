@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
 /* Base styling*/
 :root {
   --primary: #b0b8c5;
@@ -6,6 +8,7 @@
   --background-color: #f9fafb;
   --text: #1f2937;
   --white: #ffffff;
+  --font-family: 'Outfit', sans-serif;
 }
 
 * {
@@ -16,7 +19,7 @@
 
 body {
 
-  --font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--white);
   color: var(--text);
   line-height: 1.6;
@@ -285,6 +288,10 @@ body.fullscreen-mode #main-content>*:not(#quiz-card) {
   display: none !important;
 }
 
+body.fullscreen-mode {
+  overflow: hidden;
+  height: 100vh;
+}
 
 .quiz-card.result {
   position: fixed;
@@ -331,7 +338,8 @@ body.fullscreen-mode #main-content>*:not(#quiz-card) {
 .image-background {
   position: relative;
   width: 100%;
-  height: auto;
+  /*height: 100vh;*/
+  /*gör bilden mindre och fast*/
   overflow: hidden;
 }
 
