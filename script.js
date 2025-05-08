@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="text-content">
       <h2>${content.title}</h2>
       <p>${content.text}</p>
-      <button id="next-to-yoga" class="submit-btn">Next: next-to-yoga</button>
+      <button id="next-to-yoga" class="submit-btn">Next:Yoga pose of the day</button>
     </div>
   </div>
 `
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="text-content">
           <h2>${content.title}</h2>
           <p>${content.text}</p>
-          <button id="next-to-affirmation" class="submit-btn">Next: Affirmation</button>
+          <button id="next-to-affirmation" class="submit-btn">Next: Affirmation of the day</button>
         </div>
       </div>
     `
