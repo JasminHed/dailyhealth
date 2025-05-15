@@ -18,13 +18,11 @@
 }
 
 body {
-
   font-family: var(--font-family);
-  background-color: var(--white);
+  background-color: var(--background-color);
   color: var(--text);
   line-height: 1.6;
   font-size: 16px;
-  border-radius: 0;
 }
 
 h1 {
@@ -67,12 +65,17 @@ p {
   margin-bottom: 1rem;
 }
 
-
 *:focus {
   outline: 2px solid var(--primary-dark);
   outline-offset: 2px;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
 /* Navigation styling*/
 .navbar {
@@ -80,6 +83,8 @@ p {
   justify-content: space-between;
   align-items: center;
   background-color: var(--white);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 101;
 }
@@ -89,8 +94,6 @@ p {
   cursor: pointer;
   position: relative;
   z-index: 102;
-  margin-left: 8px;
-  margin-top: 8px;
 }
 
 .hamburger span {
@@ -156,50 +159,53 @@ p {
 }
 
 /* Hero Section */
-.hero {
+.hero-section {
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 1rem;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
   background-color: var(--white);
   border-bottom: 1px solid var(--secondary);
 }
 
-.hero h1 {
+.hero-content h1 {
   margin-bottom: 1rem;
 }
 
-/*Intro + Quiz section*/
-.quiz-card {
+/* Content sections */
+.main-content {
+  padding: 2rem 0;
+}
+
+/* Daily Check-in section */
+.checkin-section {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-
+  gap: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
-.quiz-card h2 {
+.checkin-section h2 {
   grid-column: 1 / -1;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.quiz,
-.intro-text {
+.checkin-form,
+.checkin-intro {
   flex: 1;
-  padding: 1rem 1rem;
+  padding: 0;
 }
 
-.intro-text {
+.checkin-intro {
   align-self: center;
-  order: 1;
-
 }
 
-.quiz {
-  order: 2;
-}
-
-.form {
+.checkin-form {
   width: 100%;
 }
 
@@ -207,32 +213,36 @@ fieldset {
   border: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 legend {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0.75rem;
   width: 100%;
   border-bottom: 1px solid var(--secondary);
+  padding-bottom: 0.5rem;
 }
 
-label {
+.option-label {
   display: block;
   margin-bottom: 1rem;
   padding: 0.7rem;
   border: 1px solid var(--secondary);
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-
+.option-label:hover {
+  background-color: var(--background-color);
+}
 
 input[type="radio"] {
   margin-right: 0.5rem;
 }
 
-.submit-btn {
+.submit-button {
   display: block;
   width: 100%;
   padding: 0.75rem;
@@ -242,59 +252,58 @@ input[type="radio"] {
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.submit-btn:hover {
+.submit-button:hover {
+  background-color: var(--text);
   text-decoration: underline;
-  border: 2px solid var(--text);
 }
 
-
-/*Feature cards*/
-
-.feature-section {
+/* Features section */
+.features-section {
   background-color: var(--secondary);
-  margin-top: 3rem;
-  width: 100%;
-  padding: 1rem;
+  padding: 3rem 1rem;
   border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
-.features {
+.features-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 1rem 1rem;
+  gap: 2rem;
   max-width: 100%;
   margin: 0 auto;
-
 }
 
 .feature-card {
-  margin: 0.75rem 0;
   background-color: var(--white);
-  padding: 0.75rem;
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
 .feature-card img {
   width: 100%;
   height: auto;
+  border-radius: 4px;
 }
 
 .feature-card h3 {
-  padding: 1rem;
+  padding: 1rem 0;
   text-align: center;
 }
 
-
-/*Result*/
-
+/* Results display */
 body.fullscreen-mode header,
 body.fullscreen-mode footer,
-body.fullscreen-mode #main-content>*:not(#quiz-card) {
+body.fullscreen-mode #main-content>*:not(#checkin-section) {
   display: none !important;
 }
 
@@ -303,41 +312,78 @@ body.fullscreen-mode {
   height: 100vh;
 }
 
-.quiz-card.result {
+.checkin-section.result-active {
   position: fixed;
   inset: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: 999;
-  background-color: var(--background);
+  background-color: var(--background-color);
   overflow-y: auto;
   padding: 0;
+  margin: 0;
+  border-radius: 0;
 }
 
-.video-background {
+/* Gemensam styling för alla resultat */
+.result-content,
+.affirmation-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Bakgrundsbilder/video */
+.meditation-background,
+.yoga-background {
+  width: 100%;
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 
-.video-background video {
+.meditation-background video,
+.yoga-background img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
-.overlay-audio {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  z-index: 2;
+/* Affirmation styling för att matcha de andra */
+.affirmation-card {
+  background-color: var(--white);
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  height: auto;
+  min-height: auto;
 }
 
-.overlay-audio audio {
+.affirmation-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 1rem 0;
+  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gemensam audio styling */
+.audio-player,
+.affirmation-audio {
+  width: 100%;
+  padding: 0 1rem 1rem 1rem;
+  margin-top: 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  transform: none;
+}
+
+.audio-player audio,
+.affirmation-audio audio {
   width: 100%;
   background: transparent;
   border: none;
@@ -345,100 +391,160 @@ body.fullscreen-mode {
   appearance: none;
 }
 
-.image-background {
-  position: relative;
-  width: 100%;
-  height: auto;
-  /*gör bilden mindre och fast*/
-  overflow: hidden;
-}
-
-.yoga-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-.white-bg-card {
-  background-color: #ffffff;
-  padding: 2rem 1rem;
+/* Gemensam textstyling */
+.content-text {
+  padding: 1rem;
+  background-color: var(--white);
   text-align: center;
 }
 
-.affirmation-text {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-
-.text-content {
-  padding: 1.5rem 1rem;
-  background-color: var(--background);
-  text-align: center;
-}
-
-.text-content h2 {
+.content-text h2 {
   font-size: 1.4rem;
   margin-bottom: 0.75rem;
-  color: var(--text);
 }
 
-.text-content p {
+.content-text p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+/* Gemensam knapp styling */
+.navigation-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 1rem 0;
+}
+
+.navigation-button:hover {
+  background-color: var(--text);
+  text-decoration: underline;
 }
 
 /* Footer styling */
-footer {
+.site-footer {
   background-color: var(--white);
-  padding: 2rem 4rem;
+  padding: 2rem;
   text-align: center;
   border-top: 1px solid var(--secondary);
+  margin-top: 3rem;
 }
 
-footer a {
+.footer-link {
   color: var(--text);
   text-decoration: none;
   margin: 0 1rem;
   font-size: 0.9rem;
 }
 
-footer a:hover {
+.footer-link:hover {
   color: var(--primary-dark);
+  text-decoration: underline;
 }
 
-.copyright {
-  margin-top: 1rem;
+.copyright-text {
+  margin-top: 1.5rem;
   color: var(--text);
   font-size: 0.8rem;
 }
 
-
+/* Responsive styles */
 @media (min-width: 668px) {
-  .app-shell {
-
-    display: flex;
+  .checkin-section {
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    flex-direction: column;
-    max-width: 320px;
-    width: 100%;
-    height: 600px;
-    margin: 100px auto;
-    border: none;
-    border-radius: 10px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Centering styles for result pages */
+  .checkin-section.result-active {
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    inset: auto;
+    height: auto;
+    overflow: visible;
   }
-
-  main {
-    overflow-y: auto;
-    /* scrolls inside only the content area */
-    flex: 1;
+  
+  .meditation-background, 
+  .yoga-background,
+  .affirmation-card {
+    width: 100%;
+    max-width: 600px;
   }
-
+  
+  .meditation-background video,
+  .yoga-background img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .nav-links li {
+    margin: 0 1.5rem;
+  }
+
+  .hero-section {
+    padding: 4rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+  }
+  
+  /* Larger width for results on desktop */
+  .checkin-section.result-active,
+  .meditation-background,
+  .yoga-background,
+  .meditation-background video,
+  .yoga-background img,
+  .affirmation-card {
+    max-width: 800px;
+  }
+}
+
+
+
+
+
+
+
+
+

@@ -3,48 +3,39 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=, initial-scale=1.0"
-  >
-  <title>Yoga</title>
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Daily Wellness Guide</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="app-shell">
-    <header>
-      <nav class="navbar">
-        <!--Hamburger-->
-        <div
-          class="hamburger"
-          id="hamburger"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="main menu">
+      <!--Hamburger-->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-        <ul
-          class="nav-links"
-          id="nav-links"
-        >
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Yoga</a></li>
-          <li><a href="meditation.html">Meditation</a></li>
-        </ul>
-      </nav>
-      <!-- Hero -->
-      <section class="hero">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditation.html">Meditation</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="container">
         <div class="hero-content">
-          <h1>About Daily Health</h1>
+          <h1>About the yoga Pose</h1>
           <p>Simple tools for your everyday wellbeing</p>
         </div>
-      </section>
-    </header>
+      </div>
+    </section>
+  </header>
+
 
     <main>
 
@@ -61,20 +52,13 @@
 
 
       <!--Footer-->
-      <footer role="content-information">
-        <a
-          href="about.html"
-          aria-label="About InnerGlow"
-        >About</a> |
-        <a
-          href="contact.html"
-          aria-label="Contact Us"
-        >Contact</a>
-        <p class="copyright">&copy; 2025 DailyHealth. All rights reserved.</p>
-      </footer>
+  <footer class="site-footer" role="contentinfo">
+    <a href="about.html" class="footer-link" aria-label="About InnerGlow">About</a> |
+    <a href="contact.html" class="footer-link" aria-label="Contact Us">Contact</a>
+    <p class="copyright-text">&copy; 2025 DailyHealth. All rights reserved.</p>
+  </footer>
 
-      <script src="script.js"></script>
-  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
