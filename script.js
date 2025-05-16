@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       audio: "assets/affirmation-tired.mp3"
     },
     scattered: {
-      text: "I am here, right now, fully.",
+      text: "I am here, right now, fully present.",
       audio: "assets/affirmation-scattered.mp3"
     },
     stressed: {
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100)
   }
 
-  // Show affirmation content - updated to match style of other results
+  // Show affirmation content 
   const showAffirmation = (state) => {
     const content = affirmationData[state]
     if (!content) return
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100)
   }
 
-  //Message not wroking on tablet and desktop
+  //Default message, only working on mobile
   if (window.innerWidth >= 668) {
     form.innerHTML = `
       <div class="desktop-message">

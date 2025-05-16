@@ -30,7 +30,7 @@ h1 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 h2 {
@@ -38,7 +38,7 @@ h2 {
   font-weight: 600;
   line-height: 1.3;
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 h3 {
@@ -162,7 +162,7 @@ p {
 .hero-section {
   width: 100%;
   margin-bottom: 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem 16px;
   text-align: center;
   background-color: var(--white);
   border-bottom: 1px solid var(--secondary);
@@ -325,7 +325,7 @@ body.fullscreen-mode {
   border-radius: 0;
 }
 
-/* Gemensam styling för alla resultat */
+/* Result styling */
 .result-content,
 .affirmation-card {
   display: flex;
@@ -333,7 +333,7 @@ body.fullscreen-mode {
   width: 100%;
 }
 
-/* Bakgrundsbilder/video */
+/* Background image and video */
 .meditation-background,
 .yoga-background {
   width: 100%;
@@ -347,7 +347,7 @@ body.fullscreen-mode {
   display: block;
 }
 
-/* Affirmation styling för att matcha de andra */
+/* Affirmation styling */
 .affirmation-card {
   background-color: var(--white);
   padding: 0;
@@ -355,8 +355,9 @@ body.fullscreen-mode {
   border-radius: 0;
   box-shadow: none;
   margin: 0;
-  height: auto;
-  min-height: auto;
+  height: 70vh;
+  margin-top: 10px;
+
 }
 
 .affirmation-text {
@@ -370,7 +371,7 @@ body.fullscreen-mode {
   justify-content: center;
 }
 
-/* Gemensam audio styling */
+/* Audio player styling*/
 .audio-player,
 .affirmation-audio {
   width: 100%;
@@ -391,7 +392,7 @@ body.fullscreen-mode {
   appearance: none;
 }
 
-/* Gemensam textstyling */
+/* Text styling for all */
 .content-text {
   padding: 1rem;
   background-color: var(--white);
@@ -409,7 +410,7 @@ body.fullscreen-mode {
   margin-bottom: 1rem;
 }
 
-/* Gemensam knapp styling */
+/* Navigation button styling */
 .navigation-button {
   display: block;
   width: 100%;
@@ -428,6 +429,13 @@ body.fullscreen-mode {
   background-color: var(--text);
   text-decoration: underline;
 }
+
+.intro {
+max-width: 800px;
+padding: 12px 14px;
+margin: 0 auto;
+}
+
 
 /* Footer styling */
 .site-footer {
@@ -467,7 +475,7 @@ body.fullscreen-mode {
     grid-template-columns: 1fr 1fr;
   }
   
-  /* Centering styles for result pages */
+  /* Centering styles for result pages 
   .checkin-section.result-active {
     position: relative;
     max-width: 600px;
@@ -489,7 +497,7 @@ body.fullscreen-mode {
     width: 100%;
     max-width: 600px;
     height: auto;
-  }
+  }*/
 }
 
 @media (min-width: 1024px) {
@@ -539,7 +547,6 @@ body.fullscreen-mode {
     max-width: 800px;
   }
 }
-
 
 
 
