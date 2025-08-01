@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 668 && form) {
-      form.innerHTML = `...Our interactive wellness journey is currently optimized for mobile devices. Please use your smartphone to access this feature.Tablet and desktop version coming soon!...`
+      form.innerHTML = `Our interactive wellness journey is currently optimized for mobile devices. Please use your smartphone to access this feature.Tablet and desktop version coming soon!`
       form.onsubmit = (e) => e.preventDefault()
     }
 
